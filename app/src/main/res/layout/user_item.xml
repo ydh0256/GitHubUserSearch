@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="user"
+                type="com.android.duckkite.githubusersearch.data.User"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:imageUrl="@{user.avatarUrl}"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:textSize="16sp"
+            android:text="@{user.login}"/>
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:checked="@{user.favorite}"
+            android:button="@drawable/favorite_check"/>
+    </LinearLayout>
+</layout>
